@@ -1,0 +1,176 @@
+{
+  "contacts": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "mr",
+        "first": "Bhargava",
+        "last": "Narasipura"
+      },
+      "location": {
+        "street": "#345, 2/3Main",
+        "city": "Mysore",
+        "state": "Karnataka",
+        "postcode": "570022"
+      },
+      "email": "oğuz.devreeze@example.com",
+      "login": {
+        "username": "crazymouse453",
+        "password": "wolfie",
+        "salt": "T0YhZLDA",
+        "md5": "94c08b679c4c0b617833ad6ea5584cdb",
+        "sha1": "cf8aa1837d32ad94a1bd9c8e42b5422e6cd818f6",
+        "sha256": "1702f32ad849f043a9fd54d695e5223593ccae7f1bffb23fc99b8138e990d58f"
+      },
+      "dob": "1962-05-06 12:32:10",
+      "registered": "2006-06-14 12:19:12",
+      "phone": "(957)-547-3286",
+      "cell": "(512)-707-0369",
+      "id": "1",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/1.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/1.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/1.jpg"
+      },
+      "nat": "NL"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "mr",
+        "first": "Siri",
+        "last": "Raghu"
+      },
+      "location": {
+        "street": "5611 donkerstraat",
+        "city": "Munich",
+        "state": "Germany",
+        "postcode": "81379"
+      },
+      "email": "oğuz.devreeze@example.com",
+      "login": {
+        "username": "crazymouse453",
+        "password": "wolfie",
+        "salt": "T0YhZLDA",
+        "md5": "94c08b679c4c0b617833ad6ea5584cdb",
+        "sha1": "cf8aa1837d32ad94a1bd9c8e42b5422e6cd818f6",
+        "sha256": "1702f32ad849f043a9fd54d695e5223593ccae7f1bffb23fc99b8138e990d58f"
+      },
+      "dob": "1962-05-06 12:32:10",
+      "registered": "2006-06-14 12:19:12",
+      "phone": "(957)-547-3286",
+      "cell": "(512)-707-0369",
+      "id": "2",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/8.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/8.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/8.jpg"
+      },
+      "nat": "NL"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "mr",
+        "first": "Bharath",
+        "last": "Simha"
+      },
+      "location": {
+        "street": "5611 donkerstraat",
+        "city": "scherpenzeel",
+        "state": "zuid-holland",
+        "postcode": 92311
+      },
+      "email": "oğuz.devreeze@example.com",
+      "login": {
+        "username": "crazymouse453",
+        "password": "wolfie",
+        "salt": "T0YhZLDA",
+        "md5": "94c08b679c4c0b617833ad6ea5584cdb",
+        "sha1": "cf8aa1837d32ad94a1bd9c8e42b5422e6cd818f6",
+        "sha256": "1702f32ad849f043a9fd54d695e5223593ccae7f1bffb23fc99b8138e990d58f"
+      },
+      "dob": "1962-05-06 12:32:10",
+      "registered": "2006-06-14 12:19:12",
+      "phone": "(957)-547-3286",
+      "cell": "(512)-707-0369",
+      "id": "3",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/9.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/9.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/9.jpg"
+      },
+      "nat": "NL"
+    },
+    {
+      "id": "4",
+      "name": {
+        "first": "Bali",
+        "last": "Nagaraja"
+      },
+      "location": {
+        "street": "aslkdj",
+        "city": "lkajsd",
+        "state": "lkjasdlk",
+        "postcode": "lkjasdlk"
+      },
+      "cell": "lkasd"
+    },
+    {
+      "id": 5,
+      "name": {
+        "first": "Vijaya",
+        "last": "Balu"
+      },
+      "location": {
+        "street": "345, 2.3 Main",
+        "city": "Mysore",
+        "state": "Karnataka",
+        "postcode": "570022"
+      },
+      "cell": "992121123"
+    },
+    {
+      "id": 6,
+      "name": {
+        "first": "Guru",
+        "last": "Raghu"
+      },
+      "location": {
+        "street": "asdlk",
+        "city": "asds",
+        "state": "asd",
+        "postcode": "sdflkdsfjds"
+      },
+      "cell": "asd"
+    },
+    {
+      "id": 7,
+      "name": {
+        "first": "Sindhu",
+        "last": "Datta"
+      },
+      "location": {
+        "street": "asdk",
+        "city": "sdkdjq",
+        "state": "sdkq",
+        "postcode": "sdf"
+      },
+      "cell": "sdf"
+    },
+    {
+      "id": 8,
+      "name": {
+        "first": "Nirmala",
+        "last": "Raghu"
+      },
+      "location": {
+        "street": "alsakd",
+        "city": "aslkd",
+        "state": "lksd",
+        "postcode": "lksd"
+      },
+      "cell": "lkasd"
+    }
+  ]
+}

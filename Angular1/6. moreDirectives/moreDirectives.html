@@ -1,0 +1,24 @@
+
+<html ng-app="moreDirectivesModule">
+<head>
+    <script src="../angular.js"></script>
+    <script src="moreDirectives.js"></script>
+    <title>Document</title>
+</head>
+<body>
+	
+    <div ng-controller="controller as c1">
+        
+        <input type="checkbox" ng-model="c1.checked"/>
+        <p ng-show="c1.checked">Some Content</p>
+        
+        <br/>
+        
+        <div ng-repeat="val in c1.listOfNumbers">
+            Element {{$index + 1}}: {{val.name}} - {{val.gender}}
+        </div>
+        
+    </div>    
+        
+</body>
+</html>

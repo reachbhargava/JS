@@ -1,0 +1,30 @@
+    <!--
+    ng-app lets the browser know that this is an Angualar App. This is the bootstrap thing.
+    Anything outside ng-app is not affected by Angular.
+
+    There can be more than 1 ng-app per file and there has to be a manual bootstrap to let it know which is the default node that has to bootstrap.
+    But most often there will be only one ng-app per file.
+
+    -->
+    
+    <!-- 
+    ng-init provides provision of adding javascript like behaviour directly into the html file.
+    Do not use any var while defining the variables.
+    
+    ng-init is not best practice. Not going to be used at all. May be only inside loops. Better ways to write initialization code.
+
+    if ng-if evaluates to false, then Angular is going to 'remove' the element from DOM. Not that it is hidden, but it is simply not there in the DOM.
+
+    variable was declared in the ng-init directive but was referred in ng-if, they share the common SCOPE object.
+    ng-init created a property in the scope object.
+    hourOfTheDay = SCOPE.hourOfTheDay (By Default Scope is referred.)
+    
+    ng-bind can be used to bind a value to an html element. ng-bind evaluates expressions too, so hourOfTheDay + 1 would be evaluated before display.
+    
+    short-hand for ng-bind is {{}}
+    
+    As earlier mentioned, ng-init is not recommended. Mixing logic with view. Rather, register a controller and let Angular know that before rendering/ parsing a part of the html, you have run this controller and then come over to controller.
+    This controller in the earlier days was simply a global javascript function, but global* (global anything) is not recommended in programming, so this is changed a little. There are certain conventions that are to be followed to let Angular know that a function is a controller before it can be used in the html.
+    
+    'angular' is globally available from the library.
+    -->

@@ -1,0 +1,24 @@
+<html ng-app="myClock">
+<head>
+	<meta charset="UTF-8">
+	<script src="../angular.js"></script>
+	<script src="clockModule.js"></script>
+	<title>Document</title>
+</head>
+    
+<body>
+    
+    <div ng-controller="clockController">
+        <h2>Clock App</h2>
+        The Current time is {{currentTime}}
+        <button type="button" ng-click="updateTime()">Update Time</button>
+        
+        <br><br>
+        Enter your name: <input type="text" ng-model="userName" />
+        
+        The name that you have entered is {{userName}}
+    </div>
+    
+</body>
+   
+</html>

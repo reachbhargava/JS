@@ -1,0 +1,60 @@
+<html ng-app="contactsApp">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="contacts.controller.js"></script>
+    <script src="service&Factory.service.js"></script>
+    <script src="value.service.js"></script>
+    <script src="getData.service.js"></script>
+	<title>Contacts App</title>
+</head>
+<body>
+    
+    <div ng-controller="headerController as head">
+        <h1>{{head.headerVal}}</h1><h6>{{head.author}}</h6>        
+    </div>
+    
+	<div class="container" ng-controller="contactsController as cntrl">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="contact in cntrl.contacts" ng-click="cntrl.showUser($index)">
+                    {{contact.name.first + " " + contact.name.last}}
+                </li>
+            </ul>
+        
+        </div>
+        
+        <div class="row">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img ng-src="{{cntrl.selectedContact.picture.thumbnail}}"/>                        
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        {{cntrl.selectedContact.name.first + " " + cntrl.selectedContact.name.last}}
+                    </h4>
+                    
+                    <h6 class="media-heading">
+                        {{cntrl.selectedContact.location.street + " " + cntrl.selectedContact.name.city}}
+                        <br/>
+                        {{cntrl.selectedContact.location.state + " " + cntrl.selectedContact.name.postcode}}
+                        <br/>
+                        {{cntrl.selectedContact.cell}}
+                    </h6>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div ng-controller="footerController as foot">
+        <h1>{{foot.footerVal}}</h1><h6>{{foot.author}}</h6>
+    </div>
+    
+</body>
+</html>

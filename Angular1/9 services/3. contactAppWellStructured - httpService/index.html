@@ -1,0 +1,123 @@
+<html ng-app="contactsApp">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="contacts.controller.js"></script>
+    <script src="service&Factory.service.js"></script>
+    <script src="value.service.js"></script>
+    <script src="getData.service.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+	<title>Contacts App</title>
+</head>
+<body>
+    
+    <div class="container">
+    
+    <div ng-controller="headerController as head">
+        <h3>{{head.headerVal}}</h3>
+    </div>
+    
+	<div ng-controller="contactsController as cntrl">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="contact in cntrl.contacts" ng-click="cntrl.showUser($index)">
+                        {{contact.name.first + " " + contact.name.last}}
+                    </li>
+                </ul>
+                
+                <button type="button" class="btn btn-primary btn-sm" ng-click="cntrl.addContact()">
+                    Add Contact
+                </button>            
+            </div>
+            <div class="col-md-6 media">
+                <div class="alert alert-success alert-dismissable" ng-if="cntrl.successMessage">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    {{cntrl.successMessage}}
+                </div>
+                <div class="alert alert-danger alert-dismissable" ng-if="cntrl.errorMessage">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    {{cntrl.errorMessage}}
+                </div>
+                
+                <div class="media-left">
+                    <a href="#">
+                        <img ng-src="{{cntrl.selectedContact.picture.thumbnail}}" ng-if="cntrl.selectedContact.picture.thumbnail"/>                        
+                    </a>
+                </div>
+                <div class="media-body">
+                    
+                    <button type="button" ng-show="!cntrl.editMode" class="btn btn-primary btn-xs"
+                            ng-click="cntrl.toggleEditMode()">
+                        <span>Edit</span>
+                    </button>
+                    <button type="button" ng-show="cntrl.editMode" class="btn btn-success btn-xs"
+                            ng-click="cntrl.save()">
+                        <span>Save</span>
+                    </button>
+                    <button type="button" ng-show="!cntrl.editMode" class="btn btn-danger btn-xs"
+                            ng-click="cntrl.delete()">
+                        <span>Delete</span>
+                    </button>
+                    
+                    <h4 class="media-heading">
+                        <span ng-show="!cntrl.editMode">
+                            <p>{{cntrl.selectedContact.name.first + " " + cntrl.selectedContact.name.last}}</p>
+                        </span>
+                    </h4>
+                    
+                    <h6 class="media-heading">                        
+                        <p><span>Location</span></p>
+                        <div ng-show="!cntrl.editMode">
+                            <p>Street: {{cntrl.selectedContact.location.street}}</p>
+                            <p>City: {{cntrl.selectedContact.location.city}}</p>
+                            <p>State: {{cntrl.selectedContact.location.state}}</p>
+                            <p>Postcode: {{cntrl.selectedContact.location.postcode}}</p>
+                            <p>Cell: {{cntrl.selectedContact.cell}}</p>
+                        </div>
+                        <div ng-show="cntrl.editMode">
+                            <p>FirstName: 
+                                <input type="text" ng-model="cntrl.selectedContact.name.first"/>
+                            </p>
+                            <p>LastName: 
+                                <input type="text" ng-model="cntrl.selectedContact.name.last"/>
+                            </p>
+                            <p>Street: 
+                                <input type="text" ng-model="cntrl.selectedContact.location.street"/>
+                            </p>
+                            <p>City:
+                                <input type="text" ng-model="cntrl.selectedContact.location.city"/>
+                            </p>
+                            <p>State:
+                                <input type="text" ng-model="cntrl.selectedContact.location.state"/>
+                            </p>
+                            <p>Postcode:
+                                <input type="text" ng-model="cntrl.selectedContact.location.postcode"/>
+                            </p>
+                            <p>Cell:
+                                <input type="text" ng-model="cntrl.selectedContact.cell"/>
+                            </p>
+                        </div>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div ng-controller="footerController as foot">
+        <h6>{{foot.author}}<br/>
+        Bhargava Inc.<br/>
+        RK Nagar, Mysore</h6>
+        
+    </div>
+    
+    </div>
+    
+</body>
+</html>

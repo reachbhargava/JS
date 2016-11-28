@@ -1,0 +1,18 @@
+
+<html ng-app="nestedControllerModule">
+<head>
+    <script src="../angular.js"></script>
+    <script src="nestedControls.js"></script>
+    <title>Document</title>
+</head>
+<body>
+	
+    <div ng-controller="controller1">
+        Controller 1: {{testText}}
+        <div ng-controller="controller2">
+            Controller 2: {{testText}}
+        </div>
+    </div>    
+        
+</body>
+</html>

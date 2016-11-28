@@ -1,0 +1,35 @@
+<html ng-app="thirdModule">
+<head>
+	<script src="../angular.js"></script>
+	<script src="third.js"></script>
+	<title>Third App</title>
+</head>
+    
+<body>
+    
+    <div ng-controller="thirdController">
+        <br/>
+        Textbox: <input type="text" ng-model="textString" />
+        <br/>
+        Checkbox: <input type="checkbox" ng-model="boolVal" />
+        <br/>
+        Date: <input type="date" ng-model="dateVal" />
+        <br/>
+        Radio Controls:
+            <input type="radio" ng-model="radioOption" value="tv">TV</input>
+            <input type="radio" ng-model="radioOption" value="laptop">Laptop</input>
+            <input type="radio" ng-model="radioOption" value="radio">Radio</input>
+        
+        
+        <div>
+            <br/>
+            <br/> TextInput is {{textString}}
+            <br/> Checkbox is {{boolVal}}
+            <br/> Date is {{dateVal}}
+            <br/> Radio Option is {{radioOption}}
+        </div>
+    </div>
+    
+</body>
+   
+</html>

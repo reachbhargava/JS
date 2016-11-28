@@ -1,0 +1,136 @@
+
+<html ng-app="todoModule">
+<head>
+    <script src="../angular.js"></script>
+    <script src="todo.js"></script>
+    <title>ToDo Angular</title>
+</head>
+<body>
+    	
+    <div ng-controller="todoController as c1">
+        <h1>Todo App</h1>
+        
+        Add a Todo:
+        
+        <input type="text" ng-model="c1.newTodo"/>
+        <button type="button" ng-click="c1.addATodo()">Add</button>
+        
+        <br/>
+        Your Todos:
+        <div ng-if="c1.editable == 'edit'">
+            <button type="button" ng-click="c1.flipIt()">Edit</button>
+        </div>
+        <div ng-if="c1.editable == 'done'">
+            <button type="button" ng-click="c1.flipIt()">Done</button>
+        </div>        
+        
+        <div ng-repeat="todo in c1.todos">
+            <div ng-if="c1.editable == 'edit'">
+                {{todo.val}} <button type="button" ng-click="c1.delete($index)">Delete</button>
+            </div>
+            <div ng-if="c1.editable == 'done'">
+                <input type="text" ng-model="todo.val"/>
+            </div>
+        </div>
+        
+    </div>
+        
+</body>
+</html>
+
+var todoModule = angular.module("todoModule", [])
+
+todoModule.controller("todoController", todoController)
+
+function todoController() {
+    this.todos = [
+        {val:'Learn Angular 1'}, 
+        {val:'Visit JavaBrains site'}, 
+        {val:'Learn more Angular'}
+    ]
+    this.editable = 'edit';
+    
+    this.addATodo = function() {
+        this.todos.push({val:this.newTodo});
+        this.newTodo = ''
+    }
+    
+    this.delete = function(index) {
+        this.todos.splice(index, 1)
+    }
+    
+    this.flipIt = function() {
+        if (this.editable == 'edit')
+            this.editable = 'done'
+        else
+            this.editable = 'edit'
+    }
+}
+
+-------------
+
+
+<html ng-app="todoModule">
+<head>
+    <script src="../angular.js"></script>
+    <script src="todo.js"></script>
+    <title>ToDo Angular</title>
+</head>
+<body>
+    	
+    <div ng-controller="todoController as c1">
+        <h1>Todo App</h1>
+        
+        Add a Todo:
+        
+        <input type="text" ng-model="c1.newTodo"/>
+        <button type="button" ng-click="c1.addATodo()">Add</button>
+        
+        <br/>
+        Your Todos:
+        <div ng-show="c1.editable">
+            <button type="button" ng-click="c1.flipIt()">Edit</button>
+        </div>
+        <div ng-hide="c1.editable">
+            <button type="button" ng-click="c1.flipIt()">Done</button>
+        </div>        
+        
+        <div ng-repeat="todo in c1.todos">
+            <div ng-show="c1.editable">
+                {{$index + 1}}. {{todo.val}} <button type="button" ng-click="c1.delete($index)">Delete</button>
+            </div>
+            <div ng-hide="c1.editable">
+                {{$index + 1}}. <input type="text" ng-model="todo.val"/>
+            </div>
+        </div>
+        
+    </div>
+        
+</body>
+</html>
+
+var todoModule = angular.module("todoModule", [])
+
+todoModule.controller("todoController", todoController)
+
+function todoController() {
+    this.todos = [
+        {val:'Learn Angular 1'}, 
+        {val:'Visit JavaBrains site'}, 
+        {val:'Learn more Angular'}
+    ]
+    this.editable = true;
+    
+    this.addATodo = function() {
+        this.todos.push({val:this.newTodo});
+        this.newTodo = ''
+    }
+    
+    this.delete = function(index) {
+        this.todos.splice(index, 1)
+    }
+    
+    this.flipIt = function() {
+        this.editable = !this.editable
+    }
+}
