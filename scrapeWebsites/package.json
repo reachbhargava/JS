@@ -1,0 +1,26 @@
+{
+  "name": "imm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build" : "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "cheerio": "^0.22.0",
+    "good": "^7.1.0",
+    "good-console": "^6.3.1",
+    "hapi": "^16.0.1",
+    "inert": "^4.0.3",
+    "parse-domain": "^1.0.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}
