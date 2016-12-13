@@ -1,0 +1,75 @@
+<div class="container">
+    <h6>{{home.greeting}}</h6>
+    
+    <div>
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+            <tr ng-repeat="user in home.users">
+                <td ng-show="!user.editing" ng-click="home.showDetails(user)">{{user.name}}</td>
+                <td ng-show="!user.editing" ng-click="home.showDetails(user)">{{user.age}}</td>
+                <td ng-show="user.editing">
+                    <input type="text" ng-model="user.name" style="width:100px;">
+                </td>
+                <td ng-show="user.editing">
+                    <input type="text" ng-model="user.age" style="width:100px;">
+                </td>
+                
+                <td>
+                    <div ng-show="!user.editing">
+                        <button class="btn btn-warning btn-xs" type="button" 
+                                ng-click="home.edit(user)">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger  btn-xs" type="button" 
+                                ng-click="home.delete(user)">
+                            Delete
+                        </button>
+                    </div>
+                    <div ng-show="user.editing">
+                        <button class="btn btn-success btn-xs" type="button" 
+                                ng-click="home.update(user)">
+                            Update
+                        </button>
+                        <button class="btn btn-danger btn-xs" type="button" 
+                                ng-click="user.editing = !user.editing">
+                            Back
+                        </button>
+                    </div>
+                    
+                </td>
+            </tr>            
+        </table>
+        <button class="btn btn-primary btn-sm" type="button" ng-click="home.addUser = !home.addUser">Add User</button>
+    </div>
+        
+    <div ng-show="home.addUser">
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input required type="text" id="name" class="form-control" ng-model="home.user.name">
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Age: </label>
+            <input required type="number" id="age" class="form-control" ng-model="home.user.age">
+        </div>
+        
+        <button type="button" ng-disabled="!home.user.name || !home.user.age" ng-click="home.add(home.user)" class="btn btn-success btn-xs">
+            Add
+        </button>
+        <button class="btn btn-primary btn-xs" type="button" ng-click="home.addUser = !home.addUser">
+            Back
+        </button>        
+    </div>
+    
+    <div class="container details-container" ng-if="home.detailed == true">
+		<div class="jumbotron">
+			<div class="close" style="font-size: 20px; color: black" ng-click="home.detailed=false;">X</div>
+			<h5>You are viewing the details of User #{{home.detailedUser._id}}</h5>
+			<h5>Name: {{home.detailedUser.name}}</h5>
+			<h5>Age: {{home.detailedUser.age}}</h5>
+		</div>
+	</div>
+    
+</div>

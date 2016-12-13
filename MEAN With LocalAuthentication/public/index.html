@@ -1,0 +1,38 @@
+<html ng-app="app">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+        <script src="./javascript/app.js"></script>
+        <script src="./javascript/home.controller.js"></script>
+        <script src="./javascript/login.controller.js"></script>
+        <title>Index.html</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <a class="navbar-brand" href="#">Bhargava's</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/">Login</a></li>
+                        <li><a href="/#/register">Register</a></li>
+                    </ul>
+                      
+                    <p class="navbar-right navbar-text" ng-show="authenticated">
+                        <a href="#" ng-click="logout()">Logout</a>
+                    </p>
+                    <p class="navbar-right navbar-text" ng-show="authenticated">Welcome {{current_user}}</p>
+                  </div>
+                </nav>
+                <!--<h2>Welcome to Index.html</h2>-->
+                <div ng-view></div>
+            </div>
+        </div>
+    </body>
+</html>
